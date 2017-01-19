@@ -25,6 +25,7 @@
     "bootstrap": "~3.3.5",
     "font-awesome": "~4.4.0",
     "angular": "^1.6.1",
-    "angular-bootstrap": "^2.4.0"
+    "angular-bootstrap": "^2.4.0",
+    "angular-cookies": "^1.6.1"
   }
 }

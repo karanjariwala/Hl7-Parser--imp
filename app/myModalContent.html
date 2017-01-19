@@ -1,5 +1,26 @@
-<div class="modal-header"> Login </div>
+<div class="modal-header"> Enter Avialability</div>
 <div class="modal-body ">
+    <form class="form-horizontal" role="form">
+        <div class="form-group" ng-hide="proceed">
+            <label for="Password" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="password" name="password" class="btn btn-primary" placeholder="Enter password" ng-model="password"> 
+            </div>
+            <br/>
+            <br/>
+            <div style="text-align:center">
+                <button ng-click="confirmPass()" class="btn btn-primary">Confirm Password</button>
+            </div>
+            
+        </div>
+    </form>
+    <div class="form-group" ng-show="proceed" style="height:100px;">
+        <label for="weekAvail" class="col-sm-2 control-label">Week Avail</label>
+        <div class="col-sm-10">
+            <input type="number" class="form-control" id="weekAvail" name="weekAvail" placeholder="Enter WeeksAvail" ng-model="weekAvail">
+            <br/>
+            <input type="number" class="form-control" id="QuarterAvail" name="QuarterAvail" placeholder="Enter Quarters Avail" ng-model="quarterAvail"> </div>
+    </div>
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-success" ng-click="done()">Save</button>

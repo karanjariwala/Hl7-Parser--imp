@@ -33,12 +33,14 @@
                 <div class="navbar-header" align="center">
                     <h1>ResourceR <span class="badge" >BLR FSI</span></h1> </div>
             </div>
+<!--
             <ul class="nav  navbar-inverse navbar-right">
                 <li>
                     <h2><button  id = "loginbutton" style="color:#ffffff; text-decoration:none;" class="btn btn-success" ng-click="openModal()">
                         <span class="glyphicon glyphicon-log-in"></span> BLR FSI</button>
                        </h2> </li>
             </ul>
+-->
         </div>
     </nav>
 <!--
@@ -77,7 +79,7 @@
                     <div class="tab-content">
                         <li class="media">
                             <div class="media-left media-middle">
-                                <a href="#"> <img class="media-object   img-thumbnail" ng-src={{asso.image}} alt="Associate image" width="100px"> </a>
+                                <a href ng-click="openModal(asso.name)"> <img class="media-object   img-thumbnail" ng-src={{asso.image}} alt="Associate image" width="100px"> </a>
                             </div>
                             <div class="media-body">
                                 <h2 class="media-heading">{{asso.name}}<span >  </span><span class="badge">   {{asso.designation}}</span></h2>
@@ -119,6 +121,7 @@
 <!--    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="../bower_components/angular-cookies/angular-cookies.min.js"></script>    
 <script src="scripts/app.js"></script>
 <script src="scripts/factory.js"></script>
 <!-- endbuild -->
