@@ -1,0 +1,13 @@
+<div class="modal-header">
+    <h4 class="modal-title"> About {{asso1.name}} </h4> </div>
+<div class="modal-body ">
+    <dl class="dl-horizontal" ng-repeat="interface in asso1.interfaces"> <dt>Interface</dt>
+        <dd>{{interface.name}}</dd> <dt>Interface Description</dt>
+        <dd>{{interface.description}}</dd> <dt>Interface Status</dt>
+        <dd>{{interface.status}}</dd> <dt>Interface clients</dt>
+        <dd ng-repeat="client in interface.clients">{{client}}</dd>
+    </dl>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default btn-sm btn-center" ng-click="cancel()">Cancel</button>
+</div>
