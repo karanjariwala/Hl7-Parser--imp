@@ -33,7 +33,7 @@
                 <div class="navbar-header" align="center">
                     <h1>ResourceR <span class="badge" >BLR FSI</span></h1> </div>
             </div>
-<!--
+            <!--
             <ul class="nav  navbar-inverse navbar-right">
                 <li>
                     <h2><button  id = "loginbutton" style="color:#ffffff; text-decoration:none;" class="btn btn-success" ng-click="openModal()">
@@ -43,7 +43,7 @@
 -->
         </div>
     </nav>
-<!--
+    <!--
     <div id="aboutMeModal" class="modal fade" role="dialog">
         <div class="modal-dialog " style="width:700px" ng-repeat="asso1 in team|filter:{'name':assoSelected()}">
              Modal content
@@ -100,7 +100,7 @@
                                         <h4>  <span class="glyphicon glyphicon-user"></span>About Me</h4> </a>
                                 </div>
                             </div>
-                            <!-- <p ng-show="showDetails" ng-repeat="interface in asso.interfaces"></p> -->
+<!--                             <p ng-show="showDetails" ng-repeat="interface in asso.interfaces"></p> -->
                         </li>
                     </div>
                 </ul>
@@ -116,12 +116,19 @@
         </div>
     </footer>
 </body>
+    
 <!-- build:js scripts/main.js -->
 <script src="../bower_components/angular/angular.min.js"></script>
+
 <!--    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
-<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-<script src="../bower_components/angular-cookies/angular-cookies.min.js"></script>    
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<!--<script src="../bower_components/jquery/dist/jquery.min.js"></script>-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.4.0/ui-bootstrap-tpls.min.js" integrity="sha256-S3XOFzlLRocTOXBeD/HwZFkD85nXpfArubD9CD0/ruY=" crossorigin="anonymous"></script>
+<script src="../bower_components/angular-cookies/angular-cookies.min.js"></script>
 <script src="scripts/app.js"></script>
 <script src="scripts/factory.js"></script>
 <!-- endbuild -->

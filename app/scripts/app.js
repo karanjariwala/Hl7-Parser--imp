@@ -9,11 +9,10 @@ function MenuController($scope, $uibModal, $cookies, team) {
     $scope.showDetails = true;
     $scope.assoFilt = 'Akash';
     $scope.team = team;
-    
-//    $cookies.putObject('karan', $scope.team[0]);
-//    $cookies.putObject('akash', $scope.team[1]);
-//    $cookies.putObject('neha', $scope.team[2]);
-//    $scope.team[0] = $cookies.getObject('karan');
+    //    $cookies.putObject('karan', $scope.team[0]);
+    //    $cookies.putObject('akash', $scope.team[1]);
+    //    $cookies.putObject('neha', $scope.team[2]);
+    //    $scope.team[0] = $cookies.getObject('karan');
     $scope.hours;
     $scope.selectAsso = function (name) {
         $scope.assoFilt = name;
@@ -67,8 +66,8 @@ function MenuController($scope, $uibModal, $cookies, team) {
                 console.log(objindex);
                 $scope.team[objindex].nextWeeksAvail = selectedItem.week;
                 $scope.team[objindex].quartersAvail = selectedItem.quarter;
-//                $cookies.putObject('karan', $scope.team[objindex]);
-//                console.log($cookies.getObject('karan'));
+                //                $cookies.putObject('karan', $scope.team[objindex]);
+                //                console.log($cookies.getObject('karan'));
             }
             else {
                 console.log("Just a cancel");
