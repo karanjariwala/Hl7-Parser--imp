@@ -1,5 +1,9 @@
 'use strict';
 var app = angular.module('confusionApp', ['ui.bootstrap', 'ngCookies']);
+app.config(function($httpProvider) {
+    $httpProvider.defaults.withCredentials = true;
+    $httpProvider.defaults.useXDomain = true;
+});
 app.controller('MenuController', MenuController);
 MenuController.$inject = ['$scope', '$uibModal', '$cookies', 'team'];
 
@@ -14,50 +18,47 @@ function MenuController($scope, $uibModal, $cookies, team) {
     //    $cookies.putObject('neha', $scope.team[2]);
     //    $scope.team[0] = $cookies.getObject('karan');
     $scope.hours;
-    $scope.selectAsso = function (name) {
+    $scope.selectAsso = function(name) {
         $scope.assoFilt = name;
         // console.log($scope.assoFilt);
     };
-    $scope.assoSelected = function () {
+    $scope.assoSelected = function() {
         console.log($scope.assoFilt)
         return $scope.assoFilt;
     };
-    $scope.select = function (setTab) {
+    $scope.select = function(setTab) {
         $scope.tab = setTab;
         if (setTab === 2) {
             $scope.filtText = "financial";
-        }
-        else if (setTab === 3) {
+        } else if (setTab === 3) {
             $scope.filtText = "data";
-        }
-        else if (setTab === 4) {
+        } else if (setTab === 4) {
             $scope.filtText = "bridge";
-        }
-        else {
+        } else {
             $scope.filtText = "clinical";
         }
     };
-    $scope.isSelected = function (checkTab) {
+    $scope.isSelected = function(checkTab) {
         return ($scope.tab === checkTab);
     };
-    $scope.toggleDetails = function () {
+    $scope.toggleDetails = function() {
         $scope.showDetails = !$scope.showDetails;
     };
-    $scope.getAvail = function (hours) {
+    $scope.getAvail = function(hours) {
         return ((Number($scope.hours) / 40) * 100)
     };
-    $scope.openModal = function (name) {
+    $scope.openModal = function(name) {
         console.log(name);
         var modalInstance = $uibModal.open({
-            templateUrl: 'myModalContent.html'
-            , controller: 'AssignController'
-            , size: 'md'
+            templateUrl: 'myModalContent.html',
+            controller: 'AssignController',
+            size: 'md'
         });
-        modalInstance.result.then(function (selectedItem) {
+        modalInstance.result.then(function(selectedItem) {
             console.log(selectedItem);
             if (selectedItem !== undefined) {
                 let objindex = 0;
-                var arr = $scope.team.filter(function (item, index) {
+                var arr = $scope.team.filter(function(item, index) {
                     if (item.name === name) {
                         objindex = index;
                         return true;
@@ -68,26 +69,25 @@ function MenuController($scope, $uibModal, $cookies, team) {
                 $scope.team[objindex].quartersAvail = selectedItem.quarter;
                 //                $cookies.putObject('karan', $scope.team[objindex]);
                 //                console.log($cookies.getObject('karan'));
-            }
-            else {
+            } else {
                 console.log("Just a cancel");
             }
-        }, function (error) {
+        }, function(error) {
             console.info('Modal dismissed at: ' + new Date() + error);
         });
     };
-    $scope.aboutMeModal = function (name) {
+    $scope.aboutMeModal = function(name) {
         //console.log(name);
-        var arr = $scope.team.filter(function (item) {
+        var arr = $scope.team.filter(function(item) {
             if (item.name === name) return true;
         });
         console.log(arr);
         var modalInstance = $uibModal.open({
-            templateUrl: 'aboutMeModal.html'
-            , controller: 'AboutMeController'
-            , size: 'md'
-            , resolve: {
-                obj: function () {
+            templateUrl: 'aboutMeModal.html',
+            controller: 'AboutMeController',
+            size: 'md',
+            resolve: {
+                obj: function() {
                     return arr[0];
                 }
             }
@@ -97,36 +97,75 @@ function MenuController($scope, $uibModal, $cookies, team) {
 app.controller('AboutMeController', AboutMeController);
 app.controller('AssignController', AssignController);
 AboutMeController.$inject = ['$scope', '$uibModalInstance', 'obj'];
-AssignController.$inject = ['$scope', '$uibModalInstance'];
+AssignController.$inject = ['$scope', '$uibModalInstance', 'Availability'];
 
 function AboutMeController($scope, $uibModalInstance, obj) {
     $scope.asso1 = obj;
-    $scope.cancel = function () {
+    $scope.cancel = function() {
         $uibModalInstance.close('cancel');
     }
 }
 
-function AssignController($scope, $uibModalInstance) {
+function AssignController($scope, $uibModalInstance, Availability) {
     console.log("Saras");
     $scope.proceed = false;
-    $scope.confirmPass = function () {
+    $scope.confirmPass = function() {
         if ("karan" === $scope.password) {
             $scope.proceed = true;
-        }
-        else {
+        } else {
             $scope.proceed = false;
         }
     }
-    $scope.done = function () {
+    $scope.done = function() {
         console.log($scope.weekAvail);
         console.log($scope.quarterAvail);
         var object = {
-            week: $scope.weekAvail
-            , quarter: $scope.quarterAvail
+            week: $scope.weekAvail,
+            quarter: $scope.quarterAvail
         };
-        $uibModalInstance.close(object);
+        Availability.save(object)
+            .then(function(response) {
+                console.log("Aww Yeah!!!");
+                $uibModalInstance.close(object);
+            }, function(error) {
+                console.log("Ohh Shit!!!");
+            });
+
     };
-    $scope.cancel = function () {
+    $scope.cancel = function() {
         $uibModalInstance.close();
     }
+}
+
+app.factory('Config', function() {
+    return {
+        apiurl: 'http://localhost:5040',
+        //apiurl : 'api.hacknhelp.com'
+    }
+});
+app.service('Availability', Availability);
+
+Availability.$inject = ['Config', '$http', '$q'];
+
+function Availability(Config, $http, $q) {
+    this.save = function(data) {
+        console.log("Here");
+        return $http.post(Config.apiurl + '/save', data)
+            .then(function(response) {
+                console.log("Here also");
+                return response.data;
+            }, function(error) {
+                console.log(error);
+                return $q.reject(error.data);
+            });
+    };
+
+    this.fetch = function() {
+        return http.post(Config.apiurl + '/fetch', data)
+            .then(function(response) {
+                return response.data;
+            }, function(error) {
+                return $q.reject(error.data);
+            });
+    };
 }
