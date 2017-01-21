@@ -138,7 +138,7 @@ function AssignController($scope, $uibModalInstance, Availability, name) {
     console.log("Saras");
     $scope.proceed = false;
     $scope.confirmPass = function() {
-        if ("karan" === $scope.password) {
+        if ("outstanding" === $scope.password) {
             $scope.proceed = true;
         } else {
             $scope.proceed = false;
@@ -198,4 +198,5 @@ function Availability(Config, $http, $q) {
                 return $q.reject(error.data);
             });
     };
-}
+};
+

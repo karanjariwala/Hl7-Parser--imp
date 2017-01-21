@@ -11,25 +11,25 @@ angular.module('confusionApp').factory('team', function() {
         interfaces: [{
                 name: 'AP History Upload',
                 description: 'Uploading AP data',
-                category: 'Data Migration',
+                category: 'data',
                 status: 'ongoing',
                 clients: ['Chsi Scranton', 'Chsi Southside', 'Chsi Oro-valley', 'Chsi Northwest', 'Chsi Gadsden', 'chsi Porter', 'Chsi Vista', 'Chsi Gateway', 'Chsi Pottstown', 'Mission Health MSJH']
             }, {
                 name: 'Blood Bank History Upload',
                 description: 'Uploading Blood bank data includes uploading Patient data, Products and Transfusions',
-                category: 'Data Migration',
+                category: 'data',
                 status: 'ongoing',
                 clients: ['Chsi Porter', 'Chsi Trinity']
             }, {
                 name: 'CCD Interfaces',
                 description: 'Interface for Creating Continutiy of Care document outbound',
-                category: 'Clinical FSI',
+                category: 'clinical',
                 status: 'ongoing',
                 clients: ['Dignity Health CCD', 'Huntington CCD HMH_CA', 'United Surgical Partners International USP_TX']
             }, {
                 name: 'ADT/ORU interface',
                 description: 'Creating Outbound ADT interface',
-                category: 'Clinical FSI',
+                category: 'clinical',
                 status: 'ongoing',
                 clients: ['Delano Regional Medical Center DRMC_CA']
             },
@@ -37,7 +37,7 @@ angular.module('confusionApp').factory('team', function() {
             {
                 name: 'Accounts Payable AP',
                 description: 'Accounts Payable Bidirectional',
-                category: 'Financial FSI',
+                category: 'financial',
                 status: 'completed',
                 clients: ['San Antonio SACH']
             }
@@ -132,7 +132,7 @@ angular.module('confusionApp').factory('team', function() {
         name: 'Archit',
         image: 'images/archit.png',
         email: 'Archit.Gupta@cerner.com',
-        track: ['data', 'clinical'],
+        track: ['data', 'clinical','financial'],
         ManagersEmail: 'sharath.huruli@cerner.com',
         nextWeeksAvail: '40',
         quartersAvail: '300',
@@ -175,7 +175,7 @@ angular.module('confusionApp').factory('team', function() {
         name: 'Rahul',
         image: 'images/rahul.png',
         email: 'Rahul.Sawhney@cerner.com',
-        track: ['clinical', 'bridge'],
+        track: ['clinical', 'bridge','financial'],
         ManagersEmail: 'sharath.huruli@cerner.com',
         nextWeeksAvail: '40',
         quartersAvail: '300',
@@ -216,7 +216,7 @@ angular.module('confusionApp').factory('team', function() {
         ]
     }, {
         name: 'Sharath',
-        image: 'images/uthapizza.png',
+        image: 'images/sharath.png',
         email: 'Sharath.Huruli@cerner.com',
         track: ['data', 'clinical'],
         ManagersEmail: 'sharath.huruli@cerner.com',
@@ -259,7 +259,7 @@ angular.module('confusionApp').factory('team', function() {
         ]
     }, {
         name: 'Niru',
-        image: 'images/uthapizza.png',
+        image: 'images/niru.png',
         email: 'Niru.Kumari@cerner.com',
         track: ['financial'],
         ManagersEmail: 'sharath.huruli@cerner.com',
