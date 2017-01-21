@@ -5,14 +5,37 @@ app.config(function($httpProvider) {
     $httpProvider.defaults.useXDomain = true;
 });
 app.controller('MenuController', MenuController);
-MenuController.$inject = ['$scope', '$uibModal', '$cookies', 'team'];
+MenuController.$inject = ['$scope', '$uibModal', '$cookies', 'team', 'Availability'];
 
-function MenuController($scope, $uibModal, $cookies, team) {
+function MenuController($scope, $uibModal, $cookies, team, Availability) {
     $scope.tab = 1;
     $scope.filtText = 'clinical';
     $scope.showDetails = true;
     $scope.assoFilt = 'Akash';
-    $scope.team = team;
+    //÷$scope.team = team;
+    var team_members = []
+    for (var i = 0; i < team.length; i++) {
+        team_members.push(team[i].name);
+    }
+    console.log(team_members);
+    Availability.fetch({ team_members: team_members })
+        .then(function(response) {
+            console.log("Here");
+            console.log(response);
+            for (var i = 0; i < response.length; i++) {
+                for (var j = 0; j < team.length; j++) {
+                    if (team[j].name === response[i].name) {
+                        team[j].nextWeeksAvail = response[i].week;
+                        team[j].quartersAvail = response[i].quarter;
+                        break;
+                    }
+                }
+            }
+            $scope.team = team;
+
+        }, function(error) {
+            console.log(error);
+        });
     //    $cookies.putObject('karan', $scope.team[0]);
     //    $cookies.putObject('akash', $scope.team[1]);
     //    $cookies.putObject('neha', $scope.team[2]);
@@ -52,7 +75,12 @@ function MenuController($scope, $uibModal, $cookies, team) {
         var modalInstance = $uibModal.open({
             templateUrl: 'myModalContent.html',
             controller: 'AssignController',
-            size: 'md'
+            size: 'md',
+            resolve: {
+                name: function() {
+                    return name
+                }
+            }
         });
         modalInstance.result.then(function(selectedItem) {
             console.log(selectedItem);
@@ -97,7 +125,7 @@ function MenuController($scope, $uibModal, $cookies, team) {
 app.controller('AboutMeController', AboutMeController);
 app.controller('AssignController', AssignController);
 AboutMeController.$inject = ['$scope', '$uibModalInstance', 'obj'];
-AssignController.$inject = ['$scope', '$uibModalInstance', 'Availability'];
+AssignController.$inject = ['$scope', '$uibModalInstance', 'Availability', 'name'];
 
 function AboutMeController($scope, $uibModalInstance, obj) {
     $scope.asso1 = obj;
@@ -106,7 +134,7 @@ function AboutMeController($scope, $uibModalInstance, obj) {
     }
 }
 
-function AssignController($scope, $uibModalInstance, Availability) {
+function AssignController($scope, $uibModalInstance, Availability, name) {
     console.log("Saras");
     $scope.proceed = false;
     $scope.confirmPass = function() {
@@ -121,8 +149,10 @@ function AssignController($scope, $uibModalInstance, Availability) {
         console.log($scope.quarterAvail);
         var object = {
             week: $scope.weekAvail,
-            quarter: $scope.quarterAvail
+            quarter: $scope.quarterAvail,
+            name: name
         };
+        console.log(object);
         Availability.save(object)
             .then(function(response) {
                 console.log("Aww Yeah!!!");
@@ -160,8 +190,8 @@ function Availability(Config, $http, $q) {
             });
     };
 
-    this.fetch = function() {
-        return http.post(Config.apiurl + '/fetch', data)
+    this.fetch = function(data) {
+        return $http.post(Config.apiurl + '/fetch', data)
             .then(function(response) {
                 return response.data;
             }, function(error) {
