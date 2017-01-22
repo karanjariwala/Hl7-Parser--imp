@@ -180,8 +180,8 @@ function AssignController($scope, $uibModalInstance, Availability, name) {
 
 app.factory('Config', function() {
     return {
-        apiurl: 'http://localhost:5040',
-        //apiurl : 'api.hacknhelp.com'
+        // apiurl: 'http://localhost:5040',
+        apiurl : 'api.hacknhelp.com'
     }
 });
 app.service('Availability', Availability);
