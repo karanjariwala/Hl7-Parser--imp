@@ -80,6 +80,7 @@ function MenuController($scope, $uibModal, $cookies, team, Availability) {
                 name: function() {
                     return name
                 }
+
             }
         });
         modalInstance.result.then(function(selectedItem) {
@@ -117,29 +118,36 @@ function MenuController($scope, $uibModal, $cookies, team, Availability) {
             resolve: {
                 obj: function() {
                     return arr[0];
+                },
+                text: function() {
+                    return $scope.filtText;
                 }
             }
         });
     };
-  
-   
+
+
 
 }
 app.controller('AboutMeController', AboutMeController);
 app.controller('AssignController', AssignController);
-AboutMeController.$inject = ['$scope', '$uibModalInstance', 'obj'];
+AboutMeController.$inject = ['$scope', '$uibModalInstance', 'obj', 'text'];
 AssignController.$inject = ['$scope', '$uibModalInstance', 'Availability', 'name'];
 
-function AboutMeController($scope, $uibModalInstance, obj) {
+function AboutMeController($scope, $uibModalInstance, obj, text) {
     $scope.asso1 = obj;
+    $scope.filtText = text;
     $scope.cancel = function() {
         $uibModalInstance.close('cancel');
     }
 }
 
+
 function AssignController($scope, $uibModalInstance, Availability, name) {
     console.log("Saras");
     $scope.proceed = false;
+
+    console.log($scope.filtText);
     $scope.confirmPass = function() {
         if ("outstanding" === $scope.password) {
             $scope.proceed = true;
@@ -202,4 +210,3 @@ function Availability(Config, $http, $q) {
             });
     };
 };
-
