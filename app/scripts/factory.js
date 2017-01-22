@@ -87,7 +87,7 @@ angular.module('confusionApp').factory('team', function() {
         ]
     }, {
         name: 'Neha',
-        image: 'images/neha1.png',
+        image: 'images/neha.png',
         email: 'Neha.Singh@cerner.com',
         track: ['financial'],
         ManagersEmail: 'sharath.huruli@cerner.com',
