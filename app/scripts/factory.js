@@ -11,25 +11,25 @@ angular.module('confusionApp').factory('team', function() {
         interfaces: [{
                 name: 'AP History Upload',
                 description: 'Uploading AP data',
-                category: 'data',
+                category: ['data','clinical'],
                 status: 'ongoing',
                 clients: ['Chsi Scranton', 'Chsi Southside', 'Chsi Oro-valley', 'Chsi Northwest', 'Chsi Gadsden', 'chsi Porter', 'Chsi Vista', 'Chsi Gateway', 'Chsi Pottstown', 'Mission Health MSJH']
             }, {
                 name: 'Blood Bank History Upload',
                 description: 'Uploading Blood bank data includes uploading Patient data, Products and Transfusions',
-                category: 'data',
+                category: ['data','clinical'],
                 status: 'ongoing',
-                clients: ['Chsi Porter', 'Chsi Trinity']
+                clients: ['Chsi Porter', 'Chsi Trinity'],
             }, {
                 name: 'CCD Interfaces',
                 description: 'Interface for Creating Continutiy of Care document outbound',
-                category: 'clinical',
+                category: ['clinical'],
                 status: 'ongoing',
                 clients: ['Dignity Health CCD', 'Huntington CCD HMH_CA', 'United Surgical Partners International USP_TX']
             }, {
                 name: 'ADT/ORU interface',
                 description: 'Creating Outbound ADT interface',
-                category: 'clinical',
+                category: ['clinical'],
                 status: 'ongoing',
                 clients: ['Delano Regional Medical Center DRMC_CA']
             },
@@ -37,7 +37,7 @@ angular.module('confusionApp').factory('team', function() {
             {
                 name: 'Accounts Payable AP',
                 description: 'Accounts Payable Bidirectional',
-                category: 'financial',
+                category: ['financial'],
                 status: 'completed',
                 clients: ['San Antonio SACH']
             }
@@ -51,28 +51,28 @@ angular.module('confusionApp').factory('team', function() {
         nextWeeksAvail: '40',
         quartersAvail: '300',
         designation: 'System Engineer',
-        interfaces: [{
+       interfaces: [{
                 name: 'AP History Upload',
                 description: 'Uploading AP data',
-                category: 'Data Migration',
+                category: ['data','clinical'],
                 status: 'ongoing',
                 clients: ['Chsi Scranton', 'Chsi Southside', 'Chsi Oro-valley', 'Chsi Northwest', 'Chsi Gadsden', 'chsi Porter', 'Chsi Vista', 'Chsi Gateway', 'Chsi Pottstown', 'Mission Health MSJH']
             }, {
                 name: 'Blood Bank History Upload',
                 description: 'Uploading Blood bank data includes uploading Patient data, Products and Transfusions',
-                category: 'Data Migration',
+                category: ['data','clinical'],
                 status: 'ongoing',
-                clients: ['Chsi Porter', 'Chsi Trinity']
+                clients: ['Chsi Porter', 'Chsi Trinity'],
             }, {
                 name: 'CCD Interfaces',
                 description: 'Interface for Creating Continutiy of Care document outbound',
-                category: 'Clinical FSI',
+                category: ['clinical'],
                 status: 'ongoing',
                 clients: ['Dignity Health CCD', 'Huntington CCD HMH_CA', 'United Surgical Partners International USP_TX']
             }, {
                 name: 'ADT/ORU interface',
                 description: 'Creating Outbound ADT interface',
-                category: 'Clinical FSI',
+                category: ['clinical'],
                 status: 'ongoing',
                 clients: ['Delano Regional Medical Center DRMC_CA']
             },
@@ -80,7 +80,7 @@ angular.module('confusionApp').factory('team', function() {
             {
                 name: 'Accounts Payable AP',
                 description: 'Accounts Payable Bidirectional',
-                category: 'Financial FSI',
+                category: ['financial'],
                 status: 'completed',
                 clients: ['San Antonio SACH']
             }
@@ -94,28 +94,28 @@ angular.module('confusionApp').factory('team', function() {
         nextWeeksAvail: '40',
         quartersAvail: '300',
         designation: 'System Engineer',
-        interfaces: [{
+       interfaces: [{
                 name: 'AP History Upload',
                 description: 'Uploading AP data',
-                category: 'Data Migration',
+                category: ['data','clinical'],
                 status: 'ongoing',
                 clients: ['Chsi Scranton', 'Chsi Southside', 'Chsi Oro-valley', 'Chsi Northwest', 'Chsi Gadsden', 'chsi Porter', 'Chsi Vista', 'Chsi Gateway', 'Chsi Pottstown', 'Mission Health MSJH']
             }, {
                 name: 'Blood Bank History Upload',
                 description: 'Uploading Blood bank data includes uploading Patient data, Products and Transfusions',
-                category: 'Data Migration',
+                category: ['data','clinical'],
                 status: 'ongoing',
                 clients: ['Chsi Porter', 'Chsi Trinity']
             }, {
                 name: 'CCD Interfaces',
                 description: 'Interface for Creating Continutiy of Care document outbound',
-                category: 'Clinical FSI',
+                category: ['clinical'],
                 status: 'ongoing',
                 clients: ['Dignity Health CCD', 'Huntington CCD HMH_CA', 'United Surgical Partners International USP_TX']
             }, {
                 name: 'ADT/ORU interface',
                 description: 'Creating Outbound ADT interface',
-                category: 'Clinical FSI',
+                category: ['clinical'],
                 status: 'ongoing',
                 clients: ['Delano Regional Medical Center DRMC_CA']
             },
@@ -123,7 +123,7 @@ angular.module('confusionApp').factory('team', function() {
             {
                 name: 'Accounts Payable AP',
                 description: 'Accounts Payable Bidirectional',
-                category: 'Financial FSI',
+                category: ['financial'],
                 status: 'completed',
                 clients: ['San Antonio SACH']
             }
@@ -137,28 +137,28 @@ angular.module('confusionApp').factory('team', function() {
         nextWeeksAvail: '40',
         quartersAvail: '300',
         designation: 'System Engineer',
-        interfaces: [{
+       interfaces: [{
                 name: 'AP History Upload',
                 description: 'Uploading AP data',
-                category: 'Data Migration',
+                category: ['data','clinical'],
                 status: 'ongoing',
                 clients: ['Chsi Scranton', 'Chsi Southside', 'Chsi Oro-valley', 'Chsi Northwest', 'Chsi Gadsden', 'chsi Porter', 'Chsi Vista', 'Chsi Gateway', 'Chsi Pottstown', 'Mission Health MSJH']
             }, {
                 name: 'Blood Bank History Upload',
                 description: 'Uploading Blood bank data includes uploading Patient data, Products and Transfusions',
-                category: 'Data Migration',
+                category: ['data','clinical'],
                 status: 'ongoing',
-                clients: ['Chsi Porter', 'Chsi Trinity']
+                clients: ['Chsi Porter', 'Chsi Trinity'],
             }, {
                 name: 'CCD Interfaces',
                 description: 'Interface for Creating Continutiy of Care document outbound',
-                category: 'Clinical FSI',
+                category: ['clinical'],
                 status: 'ongoing',
                 clients: ['Dignity Health CCD', 'Huntington CCD HMH_CA', 'United Surgical Partners International USP_TX']
             }, {
                 name: 'ADT/ORU interface',
                 description: 'Creating Outbound ADT interface',
-                category: 'Clinical FSI',
+                category: ['clinical'],
                 status: 'ongoing',
                 clients: ['Delano Regional Medical Center DRMC_CA']
             },
@@ -166,7 +166,7 @@ angular.module('confusionApp').factory('team', function() {
             {
                 name: 'Accounts Payable AP',
                 description: 'Accounts Payable Bidirectional',
-                category: 'Financial FSI',
+                category: ['financial'],
                 status: 'completed',
                 clients: ['San Antonio SACH']
             }
@@ -180,28 +180,28 @@ angular.module('confusionApp').factory('team', function() {
         nextWeeksAvail: '40',
         quartersAvail: '300',
         designation: 'System Engineer',
-        interfaces: [{
+      interfaces: [{
                 name: 'AP History Upload',
                 description: 'Uploading AP data',
-                category: 'Data Migration',
+                category: ['data','clinical'],
                 status: 'ongoing',
                 clients: ['Chsi Scranton', 'Chsi Southside', 'Chsi Oro-valley', 'Chsi Northwest', 'Chsi Gadsden', 'chsi Porter', 'Chsi Vista', 'Chsi Gateway', 'Chsi Pottstown', 'Mission Health MSJH']
             }, {
                 name: 'Blood Bank History Upload',
                 description: 'Uploading Blood bank data includes uploading Patient data, Products and Transfusions',
-                category: 'Data Migration',
+                category: ['data','clinical'],
                 status: 'ongoing',
-                clients: ['Chsi Porter', 'Chsi Trinity']
+                clients: ['Chsi Porter', 'Chsi Trinity'],
             }, {
                 name: 'CCD Interfaces',
                 description: 'Interface for Creating Continutiy of Care document outbound',
-                category: 'Clinical FSI',
+                category: ['clinical'],
                 status: 'ongoing',
                 clients: ['Dignity Health CCD', 'Huntington CCD HMH_CA', 'United Surgical Partners International USP_TX']
             }, {
                 name: 'ADT/ORU interface',
                 description: 'Creating Outbound ADT interface',
-                category: 'Clinical FSI',
+                category: ['clinical'],
                 status: 'ongoing',
                 clients: ['Delano Regional Medical Center DRMC_CA']
             },
@@ -209,7 +209,7 @@ angular.module('confusionApp').factory('team', function() {
             {
                 name: 'Accounts Payable AP',
                 description: 'Accounts Payable Bidirectional',
-                category: 'Financial FSI',
+                category: ['financial'],
                 status: 'completed',
                 clients: ['San Antonio SACH']
             }
@@ -226,25 +226,25 @@ angular.module('confusionApp').factory('team', function() {
         interfaces: [{
                 name: 'AP History Upload',
                 description: 'Uploading AP data',
-                category: 'Data Migration',
+                category: ['data','clinical'],
                 status: 'ongoing',
                 clients: ['Chsi Scranton', 'Chsi Southside', 'Chsi Oro-valley', 'Chsi Northwest', 'Chsi Gadsden', 'chsi Porter', 'Chsi Vista', 'Chsi Gateway', 'Chsi Pottstown', 'Mission Health MSJH']
             }, {
                 name: 'Blood Bank History Upload',
                 description: 'Uploading Blood bank data includes uploading Patient data, Products and Transfusions',
-                category: 'Data Migration',
+                category: ['data','clinical'],
                 status: 'ongoing',
                 clients: ['Chsi Porter', 'Chsi Trinity']
             }, {
                 name: 'CCD Interfaces',
                 description: 'Interface for Creating Continutiy of Care document outbound',
-                category: 'Clinical FSI',
+                category: ['clinical'],
                 status: 'ongoing',
                 clients: ['Dignity Health CCD', 'Huntington CCD HMH_CA', 'United Surgical Partners International USP_TX']
             }, {
                 name: 'ADT/ORU interface',
                 description: 'Creating Outbound ADT interface',
-                category: 'Clinical FSI',
+                category: ['clinical'],
                 status: 'ongoing',
                 clients: ['Delano Regional Medical Center DRMC_CA']
             },
@@ -252,7 +252,7 @@ angular.module('confusionApp').factory('team', function() {
             {
                 name: 'Accounts Payable AP',
                 description: 'Accounts Payable Bidirectional',
-                category: 'Financial FSI',
+                category: ['financial'],
                 status: 'completed',
                 clients: ['San Antonio SACH']
             }
@@ -266,28 +266,28 @@ angular.module('confusionApp').factory('team', function() {
         nextWeeksAvail: '40',
         quartersAvail: '300',
         designation: 'System Engineer',
-        interfaces: [{
+       interfaces: [{
                 name: 'AP History Upload',
                 description: 'Uploading AP data',
-                category: 'Data Migration',
+                category: ['data','clinical'],
                 status: 'ongoing',
                 clients: ['Chsi Scranton', 'Chsi Southside', 'Chsi Oro-valley', 'Chsi Northwest', 'Chsi Gadsden', 'chsi Porter', 'Chsi Vista', 'Chsi Gateway', 'Chsi Pottstown', 'Mission Health MSJH']
             }, {
                 name: 'Blood Bank History Upload',
                 description: 'Uploading Blood bank data includes uploading Patient data, Products and Transfusions',
-                category: 'Data Migration',
+                category: ['data','clinical'],
                 status: 'ongoing',
                 clients: ['Chsi Porter', 'Chsi Trinity']
             }, {
                 name: 'CCD Interfaces',
                 description: 'Interface for Creating Continutiy of Care document outbound',
-                category: 'Clinical FSI',
+                category: ['clinical'],
                 status: 'ongoing',
                 clients: ['Dignity Health CCD', 'Huntington CCD HMH_CA', 'United Surgical Partners International USP_TX']
             }, {
                 name: 'ADT/ORU interface',
                 description: 'Creating Outbound ADT interface',
-                category: 'Clinical FSI',
+                category: ['clinical'],
                 status: 'ongoing',
                 clients: ['Delano Regional Medical Center DRMC_CA']
             },
@@ -295,7 +295,7 @@ angular.module('confusionApp').factory('team', function() {
             {
                 name: 'Accounts Payable AP',
                 description: 'Accounts Payable Bidirectional',
-                category: 'Financial FSI',
+                category: ['financial'],
                 status: 'completed',
                 clients: ['San Antonio SACH']
             }

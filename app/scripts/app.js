@@ -121,6 +121,9 @@ function MenuController($scope, $uibModal, $cookies, team, Availability) {
             }
         });
     };
+  
+   
+
 }
 app.controller('AboutMeController', AboutMeController);
 app.controller('AssignController', AssignController);
