@@ -85,12 +85,12 @@
                                 <h2 class="media-heading">{{asso.name}}<span >  </span><span class="badge">   {{asso.designation}}</span></h2>
                                 <div class="col-md-3 col-xs-12"> Next Week's Availability:
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-striped active " role="progressbar" style="width:{{asso.nextWeeksAvail/40*100}}%"> {{(asso.nextWeeksAvail/40*100).toFixed(1)}}% </div>
+                                        <div class="progress-bar progress-bar-striped active " role="progressbar" ng-attr-style="width:{{asso.nextWeeksAvail/40*100}}%"> {{(asso.nextWeeksAvail/40*100).toFixed(1)}}% </div>
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-xs-12 "> Quarter's Availability:
                                     <div class="progress ">
-                                        <div class="progress-bar progress-bar-striped active " role="progressbar" style="width:{{asso.quartersAvail/520*100}}%"> {{(asso.quartersAvail/520*100).toFixed(1)}}% </div>
+                                        <div class="progress-bar progress-bar-striped active " role="progressbar" ng-attr-style="width:{{asso.quartersAvail/520*100}}%"> {{(asso.quartersAvail/520*100).toFixed(1)}}% </div>
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-xs-12  col-md-offset-1"> <a type="button" class="btn btn-success" href="mailto:{{asso.email}}?Subject=Project%20Name:&amp;cc={{asso.ManagersEmail}}&amp;body=Send%20Via%20ResourceR:"><i class="fa fa-envelope-o"></i><span> </span> Assign Project </a> </div>
