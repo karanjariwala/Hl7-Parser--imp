@@ -298,19 +298,16 @@ angular.module('confusionApp').factory('team', function () {
                     , description: 'ORMs - Specimen and Feeding Orders Outbound'
                     , category: ['bridge']
                     , status: 'Ongoing'
-                    , clients: ['CPTL_NH - Capital Region Helathcare', 'CHLD_WA - Seattle Children'
-                        s Hospital ']
+                    , clients: ['CPTL_NH - Capital Region Helathcare', 'CHLD_WA - Seattle Children Hospital ']
                     }
                     , {
                         name: 'Transfusion Results Inbound'
                         , description: 'ORUs - Transfusion Results Inbound'
                         , category: ['Bridge']
                         , status: 'Ongoing'
-                        , clients: ['LOWE_MA - Lowell General Hospital', 'MAH_VT - Mount Ascutney Hospital', 'WIRRH_UK - Wirral Hospital, United Kingdom', 'CHLD_MO - Children’s Mercy Hospitals and Clinics', 'ATLN_NJ - AtlantiCare Health System', 'BOON_NE - Boone County Health Center', 'MHSY_IL - Memorial Health System', 'CHLD_WA - Seattle Children'
-                            s Hospital ','
-                            CPTL_NH - Capital Region Helathcare ','
-                            MLLA_CA - Martin Luther King, Jr.Community Hospital ','
-                            BMC_DE - Beebee Healthcare ']
+                        , clients: ['LOWE_MA - Lowell General Hospital', 'MAH_VT - Mount Ascutney Hospital', 'WIRRH_UK - Wirral Hospital, United Kingdom', 'CHLD_MO - Children’s Mercy Hospitals and Clinics', 'ATLN_NJ - AtlantiCare Health System', 'BOON_NE - Boone County Health Center', 'MHSY_IL - Memorial Health System', 'CHLD_WA - Seattle Children Hospital ','CPTL_NH - Capital Region Helathcare ',
+                            'MLLA_CA - Martin Luther King, Jr.Community Hospital' ,
+                            'BMC_DE - Beebee Healthcare ']
                         }
                         , {
                             name: 'Blood Status Inbound'

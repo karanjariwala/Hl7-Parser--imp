@@ -25,7 +25,7 @@
   color: floralwhite;
 }
 .carousel {
-  background: #1a237e;
+  background: #3F729B;
 }
 .carousel .item {
   height: 300px;
@@ -37,11 +37,11 @@
   top: 0;
 }
 .navbar-inverse {
-  background: #303f9f;
-  color: #ffffff;
+    background: :#3F729B;
+    color: #ffffff;
 }
 .navbar-inverse .navbar-nav > .active > a {
-  background: #5cb85c;
+  background: #3F729B;
   color: #ffffff;
 }
 .navbar-inverse .navbar-nav > .active > a:hover {
@@ -65,14 +65,14 @@
   color: #ffffff;
 }
 .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
-  background-color:#303f9f ;
+  background-color:#3F729B ;
   color: #eeeeee;
 }
 .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover {
   color: #000000;
 }
 .navbar-inverse .navbar-nav .open .dropdown-menu {
-  background-color: #303f9f;
+  background-color: #3F729B;
   color: #eeeeee;
 }
 address {
